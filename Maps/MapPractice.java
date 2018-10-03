@@ -39,6 +39,13 @@ public class MapPractice {
         System.out.print(printMap(gps));
         
         System.out.println();
+        
+        ExpeditionMap exped = new ExpeditionMap();
+        exped.ExpedtionMap();
+        exped.set(gps);
+        
+        
+        System.out.print(printMap(exped.get()));
         System.out.println("DONE!!!!!!!!");
         
         
