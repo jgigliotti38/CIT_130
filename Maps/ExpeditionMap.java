@@ -18,10 +18,14 @@ public class ExpeditionMap {
     private static Map<String, String> expedMap = new HashMap<>();
     
     public void ExpedtionMap() {
-        expedMap.put("USA", "90");
-        expedMap.put("Egypt", "26");
-        expedMap.put("Canada", "56");
-        expedMap.put("Mexico", "5");
+        gps.put("USA", "Washington D.C.");
+        gps.put("Egypt", "Cairo");
+        gps.put("Canada", "Quebec");
+        gps.put("Mexico", "Mexico City");
+        gps.put("Russia", "Moscow");
+        gps.put("France","Paris");
+        gps.put("Poland","Warsaw");
+        gps.put("Argentina","Buenos Aires");
     }
     /**
      * 
