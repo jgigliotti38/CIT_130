@@ -25,10 +25,14 @@ public class MapPractice {
         
         
         
-        gps.put("USA", "90");
-        gps.put("Egypt", "26");
-        gps.put("Canada", "56");
-        gps.put("Mexico", "5");
+        gps.put("USA", "Washington D.C.");
+        gps.put("Egypt", "Cairo");
+        gps.put("Canada", "Quebec");
+        gps.put("Mexico", "Mexico City");
+        gps.put("Russia", "Moscow");
+        gps.put("France","Paris");
+        gps.put("Poland","Warsaw");
+        gps.put("Argentina","Buenos Aires");
         
 
         
