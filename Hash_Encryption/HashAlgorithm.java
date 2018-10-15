@@ -28,6 +28,7 @@ public class HashAlgorithm {
         try {
             FileReader reader = new FileReader(file);
             BufferedReader br = new BufferedReader(reader);
+            //Reader Skips lines for .csv file
             while (br.readLine() != null) {
                 System.out.println(br.readLine());
             }
