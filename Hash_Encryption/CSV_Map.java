@@ -10,8 +10,14 @@ package Hash_Encryption;
  * @author jgigl16
  */
 import java.util.*;
+
 public class CSV_Map {
     
-    HashMap<String, > map;
+    Map<String, Coordinates> csvMap = new HashMap<>();
+    
+    public void CSV_Map(String key, Coordinates value) {
+        
+        csvMap.put(key,value);
+    }
     
 }

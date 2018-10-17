@@ -20,7 +20,7 @@ public class StringToke1 {
         
         this.input = input;
         st = new StringTokenizer(input, delim);
-        stTest(st);
+        Print(st);
         
        
     }
@@ -29,7 +29,7 @@ public class StringToke1 {
         String t = "String has been Tokenized";
         return t;
     }
-    public static void stTest(StringTokenizer st) {
+    public static void Print(StringTokenizer st) {
        while (st.hasMoreTokens()) {
            System.out.println(st.nextToken());
        }

@@ -10,5 +10,14 @@ package Hash_Encryption;
  * @author jgigl16
  */
 public class Coordinates {
+    double latitude;
+    double longitude;
+    
+    public Coordinates(double lat, double lon) {
+        latitude = lat;
+        longitude = lon;
+    }
+            
+
     
 }

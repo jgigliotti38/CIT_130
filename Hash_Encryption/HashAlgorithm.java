@@ -35,7 +35,7 @@ public class HashAlgorithm {
             br.readLine();
             
             while ((s = br.readLine()) != null) {
-                //System.out.println(s);
+                //System.out.println(s); -> Will directly Print
                 System.out.println();
                 st.Tokenize(s);
             }
