@@ -13,26 +13,37 @@ package Hash_Encryption;
  */
 import java.io.*;
 import java.util.*;
+//import Hash_Encryption.StringToke1;
 public class HashAlgorithm {
     
-    StringTokenizer st;
+    //StringTokenizer st;
     static Scanner scan = new Scanner(System.in);
     static String fileName;
-    
+    static String fileLocation;
+    static StringToke1 st = new StringToke1();
    
     
     public static void main(String[] args) {
-        System.out.println("EnterFileNAME:");
+        System.out.println("EnterFileNAME: \n");
         fileName = scan.nextLine();
-        File file = new File(fileName);
+        fileLocation = "C:\\Users\\jgigl16\\Documents\\NetBeansProjects\\HashEncryption\\src\\" + fileName;
+        File file = new File(fileLocation);
         try {
             FileReader reader = new FileReader(file);
             BufferedReader br = new BufferedReader(reader);
-            //Reader Skips lines for .csv file
-            while (br.readLine() != null) {
-                System.out.println(br.readLine());
+            String s;
+            br.readLine();
+            
+            while ((s = br.readLine()) != null) {
+                //System.out.println(s);
+                System.out.println();
+                st.Tokenize(s);
             }
-        } catch (Exception e) {
+            System.out.println();
+            System.out.println(st);
+            
+            
+        } catch (IOException e) {
             System.out.println("File Not Found!");
         }
         
