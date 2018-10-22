@@ -6,7 +6,7 @@
 package GUI;
 
 /**
- *
+ *  Simple GUI program using AWT
  * @author jgigl16
  */
 import java.awt.*;
@@ -42,7 +42,7 @@ public class GUI {
         mainFrame = new Frame("Demo");
         
         //Set MainFrame Layout
-        mainFrame.setLayout(new GridLayout(1,2));
+        mainFrame.setLayout(new BorderLayout());
         
         //Set Layout Size
         mainFrame.setSize(700,500);
