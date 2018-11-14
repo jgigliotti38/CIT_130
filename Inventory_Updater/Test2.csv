@@ -1,6 +1,6 @@
- Product No.,Product Name,Inventory Amount,Price($)
-1234,Shirts,500,19.99
-1235,CD's,200,9.99
-2245,"Vinyl(12"")",500,10.99
-1265,"Vinyl(7"")",250,7.99
-1111,Cassette,500,5.99
+Product No.,Product Name,Inventory Amount,Price($),Cost($),&
+1234,Shirts,500,19.99,10,&
+1235,CD's,200,9.99,5,&
+2245,"Vinyl(12"")",500,10.99,7,&
+1265,"Vinyl(7"")",250,7.99,4,&
+1111,Cassette,500,5.99,2,&
