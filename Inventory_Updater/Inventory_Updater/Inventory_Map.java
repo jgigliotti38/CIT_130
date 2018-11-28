@@ -11,13 +11,15 @@ package Inventory_Updater;
  */
 import java.util.*;
 
-public class Inventory_Map extends Tokenizer {
+public class Inventory_Map {
     
-    String ProductKey;
-    ProductInfo values;
-    Map<String, ProductInfo> csvMap = new HashMap<>();
+    Map<Integer, Inventory> csvMap = new HashMap<>();
+    //Integer       Product No.
+    //Inventory     Contains Updated info on that product
     
-    //String          Product No.
-    //ProductInfo     Contains Updated info on that product
+    public void CSV_Map(Integer key, Inventory value) {
+        
+        csvMap.put(key,value);
+    }
     
 }
