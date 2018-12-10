@@ -14,11 +14,7 @@ public class Tokenizer {
     
     String input;
     final String DELIM = ",";
-    final String KEY_COLUMN_NAME = "Product No.";
-    final String PRODUCT_COLUMN_NAME = "Product Name";
-    final String INVENTORY_COLUMN_NAME = "Inventory";
-    final String PRICE_COLUMN_NAME = "Price($)";
-    final String COST_COLUMN_NAME = "Cost($)";
+    int productColumn;
     
     int keyMarker;
     StringTokenizer st;
@@ -48,75 +44,32 @@ public class Tokenizer {
        }
     } //Prints entire Tokenized object
     
-    public void findKey(String input) {
+    public void findColumn (String input, String name) {
         int count = 1;
         st = new StringTokenizer(input, DELIM);
         while (st.hasMoreTokens()) {
-            if (!st.nextToken().equals(KEY_COLUMN_NAME)) {
+            if (!st.nextToken().equals(name)) {
                 count++;
             }
             else {
-                System.out.println("key column is: " + count);
+                System.out.println(name + " column is: " + count);
+                if (name.equals("Product Name")) {
+                    productColumn = count;
+                    System.out.println("COUNT IS " + productColumn);
+                }
             }
         }
-        keyMarker = count;
-    } //Searches header for Product No. column
+
+    } //Finds column numbers based on input
     
-    public void findInventoryColumn(String input) {
-        //System.out.println("GUCCI");
-        int count = 1;
-        st = new StringTokenizer(input, DELIM);
-        while (st.hasMoreTokens()) {
-            if (!st.nextToken().equals(INVENTORY_COLUMN_NAME)) {
-                count++;
+    public void findProductNames (String input) {
+
+        st = new StringTokenizer(input, DELIM); 
+            for (int i = 0; i < (productColumn-1); i++) {
+                st.nextToken();
             }
-            else {
-                System.out.println("Inventory column is: " + count);
-            }
-        }
-        
-    } //Searches header for Inventory Column
-    
-    public void findPriceColumn(String input) {
-        int count = 1;
-        st = new StringTokenizer(input, DELIM);
-        while (st.hasMoreTokens()) {
-            if (!st.nextToken().equals(PRICE_COLUMN_NAME)) {
-                count++;
-            }
-            else {
-                System.out.println("Price column is: " + count);
-            }
-        }
-        
-    } //Searches header for Price Column
-        
-    public void findCostColumn(String input) {
-        int count = 1;
-        st = new StringTokenizer(input, DELIM);
-        while (st.hasMoreTokens()) {
-            if (!st.nextToken().equals(COST_COLUMN_NAME)) {
-                count++;
-            }
-            else {
-                System.out.println("Cost column is: " + count);
-            }
-        }
-        
-    } //Searches header for Cost Column
-    
-    public void findProductColumn(String input) {
-        int count = 1;
-        st = new StringTokenizer(input, DELIM);
-        while (st.hasMoreTokens()) {
-            if (!st.nextToken().equals(PRODUCT_COLUMN_NAME)) {
-                count++;
-            }
-            else {
-                System.out.println("ProductName column is: " + count);
-            }
-        }
-        
-    } // Searches header for Product Name Column
+            String productName = st.nextToken();
+            System.out.println(productName);
+    }
     
 }
