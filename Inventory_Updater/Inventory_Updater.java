@@ -23,6 +23,12 @@ public class Inventory_Updater {
     static Tokenizer st = new Tokenizer();
     static Tokenizer inMap = new Inventory_Map();
      
+    final static String KEY_COLUMN_NAME = "Product No.";
+    final static String PRODUCT_COLUMN_NAME = "Product Name";
+    final static String CURRENT_INVENTORY_COLUMN_NAME = "Current Inventory";
+    final static String PRICE_COLUMN_NAME = "Price($)";
+    final static String COST_COLUMN_NAME = "Cost($)";
+    final static String STARTING_INVENTORY_COLUMN_NAME = "Starting Inventory";
    
     
     public static void main(String[] args) {
@@ -34,28 +40,37 @@ public class Inventory_Updater {
             FileReader reader = new FileReader(file);
             BufferedReader br = new BufferedReader(reader);
             String s;
+            String t;
             
             //******************************************************
             br.mark(1);
-            st.findKey(br.readLine());
+            st.findColumn(br.readLine(), KEY_COLUMN_NAME);
             br.reset();        
-            st.findInventoryColumn(br.readLine());
+            st.findColumn(br.readLine(), PRODUCT_COLUMN_NAME);
             br.reset();
-            st.findProductColumn(br.readLine());
+            st.findColumn(br.readLine(), CURRENT_INVENTORY_COLUMN_NAME);
             br.reset();
-            st.findCostColumn(br.readLine());
+            st.findColumn(br.readLine(), PRICE_COLUMN_NAME);
             br.reset();
-            st.findPriceColumn(br.readLine());
-
+            st.findColumn(br.readLine(), COST_COLUMN_NAME);
+            br.reset();
+            st.findColumn(br.readLine(), STARTING_INVENTORY_COLUMN_NAME);
+            br.reset();
+            System.out.println();
             //****** SEARCHES COLUMNS FOR HEADERS
             
+            br.readLine();
+            while ((t = br.readLine()) != null) {
+                st.findProductNames(t);
+            }
+            
             while ((s = br.readLine()) != null) {
-                //System.out.println(s); -> Will directly Print
+                //System.out.println(s); //-> Will directly Print
                 System.out.println();
                 st.TokenizeAll(s); // Prints entire .csv file
             }
             System.out.println();
-            //System.out.println(st);
+            //System.out.println(st); //"String has been Tokenized"
             
             
             
@@ -65,6 +80,6 @@ public class Inventory_Updater {
         
         
     }
-    
+
     
 }
